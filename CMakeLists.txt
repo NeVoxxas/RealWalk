@@ -55,6 +55,12 @@ target_include_directories(ETS2MobileCam PRIVATE
 )
 
 # =============================================================================
+# Sub Directory
+# =============================================================================
+
+add_subdirectory(src/ext/minhook)
+
+# =============================================================================
 # Link libraries
 # =============================================================================
 target_link_libraries(ETS2MobileCam PRIVATE
@@ -62,7 +68,9 @@ target_link_libraries(ETS2MobileCam PRIVATE
     ws2_32
     d3d11
     dxgi
+    minhook
 )
+#target_link_libraries(ETS2MobileCam PRIVATE minhook)
 
 # =============================================================================
 # Preprocessor definitions

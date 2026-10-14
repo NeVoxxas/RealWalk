@@ -25,6 +25,10 @@ public:
 		return m_active;
 	}
 
+	void activate() {
+		if (!m_active) set_active(true);
+	}
+
 	void deactivate() {
 		set_active(false);
 	}
@@ -56,6 +60,9 @@ private:
 	void handle_raw_input(HRAWINPUT handle);
 
 	bool m_active{ false };
+	RAWINPUTDEVICE m_saved_mouse_rid{};
+	bool m_has_saved_mouse_rid{ false };
+	bool m_raw_registered{ false };
 	bool m_toggle_was_down{ false };
 
 	std::thread m_pump_thread;

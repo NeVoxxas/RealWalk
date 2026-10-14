@@ -4,6 +4,7 @@
 /*-----------------------------------------*/
 
 #include "PCInput.h"
+#include <vector>
 
 namespace
 {
@@ -62,19 +63,52 @@ void PCInput::handle_raw_input(HRAWINPUT handle)
 
 void PCInput::register_raw_input()
 {
-	if (!m_message_hwnd) return;
+	if (!m_message_hwnd || m_raw_registered) return;
+
+	// Pelės registracija procese yra viena, todėl įsimename žaidimo, kad galėtume ją grąžinti
+	m_has_saved_mouse_rid = false;
+	UINT count = 0;
+	GetRegisteredRawInputDevices(nullptr, &count, sizeof(RAWINPUTDEVICE));
+	if (count > 0)
+	{
+		std::vector<RAWINPUTDEVICE> devices(count);
+		const UINT got = GetRegisteredRawInputDevices(devices.data(), &count, sizeof(RAWINPUTDEVICE));
+		if (got != static_cast<UINT>(-1))
+		{
+			for (UINT i = 0; i < got; ++i)
+			{
+				if (devices[i].usUsagePage == 0x01 && devices[i].usUsage == 0x02)
+				{
+					m_saved_mouse_rid = devices[i];
+					m_has_saved_mouse_rid = true;
+					break;
+				}
+			}
+		}
+	}
 
 	RAWINPUTDEVICE rid{};
 	rid.usUsagePage = 0x01; // generic desktop
 	rid.usUsage = 0x02;     // mouse
 	rid.dwFlags = RIDEV_INPUTSINK; // keep receiving input even without focus
 	rid.hwndTarget = m_message_hwnd;
-	RegisterRawInputDevices(&rid, 1, sizeof(rid));
+	m_raw_registered = RegisterRawInputDevices(&rid, 1, sizeof(rid)) != FALSE;
 }
 
 void PCInput::unregister_raw_input()
 {
-	// register only while walk mode is active, otherwise it steals the games own target
+	if (!m_raw_registered) return;
+	m_raw_registered = false;
+
+	if (m_has_saved_mouse_rid)
+	{
+		// Grąžiname žaidimo pelės registraciją, kitaip žaidimas nebegauna pelės judesio
+		RegisterRawInputDevices(&m_saved_mouse_rid, 1, sizeof(RAWINPUTDEVICE));
+		m_has_saved_mouse_rid = false;
+		return;
+	}
+
+	// Žaidimas nieko neturėjo užregistravęs, tiesiog pašaliname savąją
 	RAWINPUTDEVICE rid{};
 	rid.usUsagePage = 0x01;
 	rid.usUsage = 0x02;
