@@ -2,14 +2,13 @@
 
 Creates a Walking Camera mode for Euro Truck Simulator 2, using either your phone or WASD controls
 
-| Mobile | WASD |
-|---|---|
-| https://github.com/user-attachments/assets/77dd260c-7b0d-4cc4-9530-2af0da9b6718 | https://github.com/user-attachments/assets/0fcba02c-f539-4493-a574-867c4da53ace |
-
-
-
-
-
+## Updates
+- Enter/Exit truck animation
+- Fixed 0,0,0 camera bug when exiting the truck
+- Added PhysX collision detection for the camera, so it won't clip through walls or the ground anymore. ( Need improvements, works on small distance, but can still clip through walls if you move too fast. )
+- Added Jumping, crounching and sprinting.
+- Added ability to connect cables, lower and raise legs ( advanced coupling required turned on in game settings )
+- Added check for exiting the truck, so if there's a collision on a left side of the truck, it won't let you exit the truck and get stuck in the wall.
 
 
 
@@ -36,7 +35,6 @@ Creates a Walking Camera mode for Euro Truck Simulator 2, using either your phon
 
 ## Known issues
 - No iOS support, Safari doesn't expose the sensor API needed.
-- Pressing F9 without manually entering freecam at least once that session sets your position to `0,0,0`
 
 ## Usage - Mobile
 1. Build the plugin and drop the DLL into your ETS2 plugins folder.
@@ -55,6 +53,3 @@ Motion sensors need a "secure context" (HTTPS), and the plugin only serves plain
 2. Launch the game, press F9 to toggle the walking mode
 3. Use WASD to move around, CTRL and Space to move up and down.
 4. Use Mouse to look around, scroll wheel to zoom in/out and middle click to reset.
-
-## Contributing
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the code style and naming guides.
