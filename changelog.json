@@ -1,0 +1,22 @@
+[
+  {
+    "version": "0.1.0-dev",
+    "items": [
+      {
+        "type": "new",
+        "lt": "Pridėtas RealWalk atnaujinimų centras.",
+        "en": "Added the RealWalk update center."
+      },
+      {
+        "type": "new",
+        "lt": "Pridėtas automatinis „What's New“ langas.",
+        "en": "Added the automatic What's New dialog."
+      },
+      {
+        "type": "improved",
+        "lt": "Atnaujinimų istorija palaiko lietuvių ir anglų kalbas.",
+        "en": "Update history supports Lithuanian and English."
+      }
+    ]
+  }
+]
