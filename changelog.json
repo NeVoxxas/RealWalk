@@ -1,4 +1,19 @@
 [
+    {
+    "version": "0.1.02-dev",
+    "items": [
+      {
+        "type": "new",
+        "lt": "Pridėtas degalinės terminalo UI.",
+        "en": "Added gas station terminal UI."
+      },
+      {
+        "type": "fixed",
+        "lt": "Sutvarkyta klaidą su reShade.",
+        "en": "Fixed issue with reShade."
+      }
+    ]
+  },
   {
     "version": "0.1.0-dev",
     "items": [
