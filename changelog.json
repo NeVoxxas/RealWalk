@@ -1,5 +1,100 @@
 [
-    {
+  {
+    "version": "0.1.03-dev",
+    "items": [
+      {
+        "type": "new",
+        "lt": "Pridėtas pilnas rankinis degalų pylimas",
+        "en": "Added a complete manual refuelling"
+      },
+      {
+        "type": "new",
+        "lt": "Pridėtas kuro kvitas, kurį baigus pylimą galima laikyti rankoje",
+        "en": "Added a fuel receipt that can be held after refuelling"
+      },
+      {
+        "type": "new",
+        "lt": "Pridėtos žvilgsniu valdomos sąveikos",
+        "en": "Added gaze-controlled interactions"
+      },
+      {
+        "type": "new",
+        "lt": "Pridėta CMR dokumentų eiga",
+        "en": "Added a CMR workflow"
+      },
+      {
+        "type": "new",
+        "lt": "Pridėti pakrovimo ir iškrovimo darbų sąrašai, ofiso žymeklis bei atskiri dokumentų paėmimo ir pridavimo etapai.",
+        "en": "Added loading and unloading checklists, an office marker, and separate document pickup and handover stages."
+      },
+      {
+        "type": "new",
+        "lt": "Pridėta įmonės registracijos (Check-In) eiga, naudojanti įmonės teritoriją ir pastatų sienų aptikimą.",
+        "en": "Added a company Check-In flow using the company area and building-wall detection."
+      },
+      {
+        "type": "new",
+        "lt": "Pridėtas CMR, kuro pistoleto, kvito ir žibintuvėlio rankų atvaizdavimas per DirectX.",
+        "en": "Added DirectX hand rendering for the CMR, fuel nozzle, receipt, and flashlight."
+      },
+      {
+        "type": "new",
+        "lt": "Pridėtos užtemdytos įlipimo ir išlipimo animacijos su laiptelių imitacija bei teisinga vairuotojo durų kryptimi.",
+        "en": "Added faded truck entry and exit animations with simulated steps and the correct driver-door direction."
+      },
+      {
+        "type": "improved",
+        "lt": "Sąveikų užuominos dabar palaiko kelis klavišus, kelias teksto eilutes ir atskirą ENTER veiksmą.",
+        "en": "Interaction prompts now support multiple keys, multiple text lines, and a separate ENTER action."
+      },
+      {
+        "type": "improved",
+        "lt": "Patobulintos rankose laikomų objektų animacijos vaikštant ir judinant kamerą.",
+        "en": "Improved held-item animation while walking and moving the camera."
+      },
+      {
+        "type": "improved",
+        "lt": "Sumažintas kuro pylimo garso garsumas ir suderintas jo veikimas su automatiniu bei rankiniu pylimu.",
+        "en": "Reduced the fuel-pump sound volume and synchronized it with automatic and manual filling."
+      },
+      {
+        "type": "improved",
+        "lt": "Pridėta žaidimo versijos ir naudojamų adresų saugumo patikra, kad nepalaikomoje ETS2 versijoje pavojingos funkcijos būtų išjungtos.",
+        "en": "Added game-version and address safety validation so unsafe features are disabled on unsupported ETS2 versions."
+      },
+      {
+        "type": "improved",
+        "lt": "Perdarytas vaikščiojimo valdiklis",
+        "en": "Reworked the walking controller"
+      },
+      {
+        "type": "fixed",
+        "lt": "Sutvarkyta, kad rankos, CMR ir sąveikų overlay nebūtų rodomi ETS2 pagrindiniame meniu.",
+        "en": "Fixed hands, CMR, and interaction overlays appearing in the ETS2 main menu."
+      },
+      {
+        "type": "fixed",
+        "lt": "Sutvarkyti terminalo sąveikos konfliktai: terminalas nebeatsidaro savaime išlipant ir nebeblokuoja įlipimo į vilkiką.",
+        "en": "Fixed terminal interaction conflicts: it no longer opens automatically when exiting or blocks truck entry."
+      },
+      {
+        "type": "fixed",
+        "lt": "Sutvarkytas kuro pistoleto grąžinimas uždarius bako dangtelį.",
+        "en": "Fixed returning the fuel nozzle after closing the fuel cap."
+      },
+      {
+        "type": "fixed",
+        "lt": "Sutvarkytas CMR vairuotojo vardo išdėstymas, parašo trynimas ir piešimas tik laikant kairįjį pelės mygtuką.",
+        "en": "Fixed CMR driver-name placement, signature clearing, and drawing only while holding the left mouse button."
+      },
+      {
+        "type": "fixed",
+        "lt": "Pašalintas kameros mikrojudėjimas stovint vietoje ir sutvarkytas strigimas bei prasiskverbimas prie sienų, konteinerių ir nelygaus paviršiaus.",
+        "en": "Removed idle camera micro-movement and fixed sticking or tunnelling at walls, containers, and uneven surfaces."
+      }
+    ]
+  },
+  {
     "version": "0.1.02-dev",
     "items": [
       {
@@ -9,8 +104,8 @@
       },
       {
         "type": "fixed",
-        "lt": "Sutvarkyta klaidą su reShade.",
-        "en": "Fixed issue with reShade."
+        "lt": "Sutvarkyta klaida su ReShade.",
+        "en": "Fixed an issue with ReShade."
       }
     ]
   },
